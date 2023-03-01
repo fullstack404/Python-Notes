@@ -1,0 +1,131 @@
+********************************************************** Python Notes ****************************************************************************
+Python is a high-level, scripted programming language that was created by Guido Van Rossum in the late 1980's.
+
+History of Python:
+
+- In 1989, Guido van Rossum began working on Python at the National Research Institute for Mathematics and Computer Science in the 
+  Netherlands.
+- The first version of Python, version 0.9.0, was released in February 1991.
+- In 1994, Python 1.0 was released, which included a number of new features such as lambda, map, filter, and reduce.
+- Python 2.0 was released in 2000, which included a number of new features such as list comprehensions, a garbage collector, and support 
+  for Unicode.
+- Python 3.0 was released in 2008, which included a number of significant changes, such as the removal of some features that were deemed 
+  to be redundant or confusing, and the introduction of new features such as the print() function as a built-in function.
+- Since the release of Python 3.0, new versions of Python 2.x have not been developed, and support for Python 2.x officially ended on 
+  January 1, 2020.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Features of Python:
+
+- Simple and easy to learn: Python has a simple and straightforward syntax that is easy to read and write. This makes it a great language 
+  for beginners who are just getting started with programming.
+
+- Interpreted: Python code is executed line by line, without the need for a compiler. This makes it easier to test and debug code as you 
+  write it.
+
+- High-level: Python is a high-level language, which means that it abstracts away many of the low-level details of the computer system, 
+  such as memory management and hardware operations.
+
+- Dynamic typing: Python is dynamically typed, which means that variable types are determined at runtime, rather than at compile time. 
+  This makes it easier to write code quickly and without the need for complex type declarations.
+
+- Large standard library: Python comes with a large standard library that provides a wide range of modules and functions for tasks such 
+  as file I/O, string manipulation, networking, and more.
+
+- Object-oriented: Python is an object-oriented language, which means that it supports the creation and manipulation of objects. 
+  This makes it easier to write modular and reusable code. 
+
+- Portable: Python code can be run on a wide range of platforms, including Windows, Linux, and macOS, making it highly portable.
+
+- Powerful: Python is a powerful language that can be used for a wide range of tasks, from web development and data analysis to artificial
+  intelligence and machine learning.
+
+- Open source: Python is an open-source language, which means that its source code is freely available and can be modified and distributed
+  by anyone.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Comments in Python: 
+
+Comments starts with a '#'.
+
+For multi-line string, it should be written as, 
+#This is a comment
+#written in
+#more than just one line
+
+or multi-line comments can be written as
+
+"""
+This is a comment
+written in
+more than just one line
+"""
+
+by using triple quotes which will be ignored by python as it is not assigned to any variabe.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Variables in Python: 
+
+Variables are containers for storing data values.
+
+x = 4        # x is of type int
+x = "Sally"  # x is now of type str
+
+Casting - If you want to specify the data type of a variable, this can be done with casting.
+
+x = str(3)    # x will be '3'
+y = int(3)    # y will be 3
+z = float(3)  # z will be 3.0
+
+Get the Type - You can get the data type of a variable with the type() function.
+
+Note - Variable names are case-sensitive.
+
+Rules on declaring a variable name : 
+
+- A variable name must start with a letter or the underscore character
+- A variable name cannot start with a number
+- A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+- Variable names are case-sensitive (age, Age and AGE are three different variables)
+- A variable name cannot be any of the Python keywords.
+
+Variable names with more than one word can be difficult to read.There are several techniques you can use to make them more readable:
+
+1. Camel Case - myVariableName = "John"
+2. Pascal Case - MyVariableName = "John"
+3. Snake Case - my_variable_name = "John" 
+
+Python allows you to assign values to multiple variables in one line:
+x, y, z = "Orange", "Banana", "Cherry"
+
+And you can assign the same value to multiple variables in one line:
+x = y = z = "Orange"
+
+If you have a collection of values in a list, tuple etc. Python allows you to extract the values into variables. This is called unpacking.
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+
+* Global Variables
+Variables that are created outside of a function (as in all of the examples above) are known as global variables.
+Global variables can be used by everyone, both inside of functions and outside.
+
+If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. 
+The global variable with the same name will remain as it was, global and with the original value.
+
+x = "awesome" # Global variable
+
+def myfunc():
+  x = "fantastic" # Local variable
+  print("Python is " + x)
+
+Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function. To create a 
+global variable inside a function, you can use the global keyword.
+
+def myfunc():
+  global x
+  x = "fantastic" # Becomes global variable
+  print("Python is " + x)
+
