@@ -62,6 +62,13 @@ This is a comment
 written in
 more than just one line
 """
+or
+'''
+This is a comment
+written in
+more than just one line
+'''
+
 
 by using triple quotes which will be ignored by python as it is not assigned to any variabe.
 
@@ -128,4 +135,186 @@ def myfunc():
   global x
   x = "fantastic" # Becomes global variable
   print("Python is " + x)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Data Types in Python
+
+Python has the following data types built-in by default, in these categories:
+
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:	set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	NoneType
+
+Setting specific data type
+
+x = str("Hello World")	                        str	
+x = int(20)	                                    int	
+x = float(20.5)	                                float	
+x = complex(1j)	                                complex	
+x = list(("apple", "banana", "cherry"))	        list	
+x = tuple(("apple", "banana", "cherry"))        tuple	
+x = range(6)	                                  range	
+x = dict(name="John", age=36)	                  dict	
+x = set(("apple", "banana", "cherry"))	        set	
+x = frozenset(("apple", "banana", "cherry"))	  frozenset	
+x = bool(5)	                                    bool	
+x = bytes(5)	                                  bytes	
+x = bytearray(5)	                              bytearray	
+x = memoryview(bytes(5))	                      memoryview
+
+--------------------------------------------------------------------------------
+
+Python Numbers
+1. Integer - a whole number, positive or negative, without decimals, of unlimited length.
+
+2. Float, or "floating point number" is a number, positive or negative, containing one or more decimals. Float can also be scientific 
+   numbers with an "e" to indicate the power of 10. Example: x = 35e3 which is equal to 35 * 10 to the power of 3.
+  
+3. Complex numbers are written with a "j" as the imaginary part. Example: x = 3+5j
+ 
+  
+Random Numbers 
+Python does not have a random() function to make a random number, but Python has a built-in module called random that can be used 
+to make random numbers:
+
+import random
+print(random.randrange(1, 10)) # Prints a random number between 1 to 10
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Python Strings
+
+Strings in python are surrounded by either single quotation marks, or double quotation marks.'hello' is the same as "hello".
+Like many other popular programming languages, strings in Python are arrays of bytes representing unicode characters.However, Python does 
+not have a character data type, a single character is simply a string with a length of 1. Square brackets can be used to access elements 
+of the string.
+
+To get the length of a string, use the len() function.
+Example: a = "Hello, World!"
+         print(len(a))
+
+To check if a certain phrase or character is present in a string, we can use the keyword in.
+Example: txt = "The best things in life are free!"
+         print("free" in txt)
+
+To check if a certain phrase or character is NOT present in a string, we can use the keyword not in.
+Example: txt = "The best things in life are free!"
+         print("expensive" not in txt)
+
+Slicing String:
+You can return a range of characters by using the slice syntax.Specify the start index and the end index, separated by a colon, to return 
+a part of the string.
+Example: b = "Hello, World!"
+         print(b[2:5])
+
+By leaving out the start index, the range will start at the first character:
+Example: b = "Hello, World!"
+         print(b[:5])
+
+By leaving out the end index, the range will go to the end:
+Example: b = "Hello, World!"
+         (b[2:])
+
+Use negative indexes to start the slice from the end of the string:
+Example: b = "Hello, World!"
+         print(b[-5:-2])
+
+To concatenate, or combine, two strings you can use the + operator.
+Example: a = "Hello"
+         b = "World"
+         c = a + b
+         print(c)
+
+The format() method takes the passed arguments, formats them, and places them in the string where the placeholders {} are:
+Example: age = 36
+         txt = "My name is John, and I am {}"
+         print(txt.format(age))
+The format() method takes unlimited number of arguments, and are placed into the respective placeholders.
+
+*****************************************************************************************************************************
+
+Escape Characters:
+
+To insert characters that are illegal in a string, use an escape character.An escape character is a backslash \ followed by 
+the character you want to insert.
+
+\'	Single Quote
+\"  Double Quote	
+\\	Backslash	
+\n	New Line	
+\r	Carriage Return	
+\t	Tab	
+\b	Backspace	
+\f	Form Feed	
+\ooo	Octal value	
+\xhh	Hex value
+
+*****************************************************************************************************************************
+String Methods in Python
+
+capitalize()	                        Converts the first character to upper case. The first character is converted to upper 
+                                      case, and the rest are converted to lower case.
+
+casefold()	                          Converts string into lower case.
+
+center()	                            Returns a centered string.
+
+count()	                              Returns the number of times a specified value occurs in a string. Can give a range.
+
+encode()	                            Returns an encoded version of the string.
+
+endswith()	                          Returns true if the string ends with the specified value.
+
+expandtabs()	                        Sets the tab size of the string.
+
+find()	                              Searches the string for a specified value and returns the position of where it was found.
+                                      Can give a range.
+                                      
+format()	                            Formats specified values in a string. Check https://www.w3schools.com/python/ref_string_format.asp
+                                      to know more.
+
+format_map()	                        Formats specified values in a string.
+index()	Searches the string for a specified value and returns the position of where it was found
+isalnum()	Returns True if all characters in the string are alphanumeric
+isalpha()	Returns True if all characters in the string are in the alphabet
+isdecimal()	Returns True if all characters in the string are decimals
+isdigit()	Returns True if all characters in the string are digits
+isidentifier()	Returns True if the string is an identifier
+islower()	Returns True if all characters in the string are lower case
+isnumeric()	Returns True if all characters in the string are numeric
+isprintable()	Returns True if all characters in the string are printable
+isspace()	Returns True if all characters in the string are whitespaces
+istitle()	Returns True if the string follows the rules of a title
+isupper()	Returns True if all characters in the string are upper case
+join()	Joins the elements of an iterable to the end of the string
+ljust()	Returns a left justified version of the string
+lower()	Converts a string into lower case
+lstrip()	Returns a left trim version of the string
+maketrans()	Returns a translation table to be used in translations
+partition()	Returns a tuple where the string is parted into three parts
+replace()	Returns a string where a specified value is replaced with a specified value
+rfind()	Searches the string for a specified value and returns the last position of where it was found
+rindex()	Searches the string for a specified value and returns the last position of where it was found
+rjust()	Returns a right justified version of the string
+rpartition()	Returns a tuple where the string is parted into three parts
+rsplit()	Splits the string at the specified separator, and returns a list
+rstrip()	Returns a right trim version of the string
+split()	Splits the string at the specified separator, and returns a list
+splitlines()	Splits the string at line breaks and returns a list
+startswith()	Returns true if the string starts with the specified value
+strip()	Returns a trimmed version of the string
+swapcase()	Swaps cases, lower case becomes upper case and vice versa
+title()	Converts the first character of each word to upper case
+translate()	Returns a translated string
+upper()	Converts a string into upper case
+zfill()	Fills the string with a specified number of 0 values at the beginning
+
+
+
 
