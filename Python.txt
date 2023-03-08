@@ -496,3 +496,143 @@ Operator	                  Description
    not	                    Logical NOT	
    and	                    AND	
    or	                      OR
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Python Lists
+
+> Lists are used to store multiple items in a single variable. Lists are created using square brackets.
+
+Example : thislist = ["apple", "banana", "cherry"]
+
+> List items are ordered, changeable, and allow duplicate values.
+
+> When we say that lists are ordered, it means that the items have a defined order, and that order will not change.
+
+> The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+
+> Since lists are indexed, lists can have items with the same value.
+
+List comprehension
+List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
+
+Syntax : newlist = [expression for item in iterable if condition == True]. The return value is a new list, leaving the old list unchanged.
+
+The condition is like a filter that only accepts the items that valuate to True.
+
+The iterable can be any iterable object, like a list, tuple, set etc.
+
+The expression is the current item in the iteration, but it is also the outcome, which you can manipulate before it ends up like a list item 
+in the new list.
+
+
+Sorting List
+
+List objects have a sort() method that will sort the list alphanumerically, ascending, by default.
+To sort descending, use the keyword argument reverse = True.
+
+You can also customize your own function by using the keyword argument key = function. The function will return a number that will be used
+to sort the list (the lowest number first).
+
+def myfunc(n):
+  return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
+
+By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters.
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+
+['Kiwi', 'Orange', 'banana', 'cherry']
+
+So if you want a case-insensitive sort function, use str.lower as a key function.
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key = str.lower)
+
+['banana', 'cherry', 'Kiwi', 'Orange']
+
+The reverse() method reverses the current sorting order of the elements.
+
+******************************************************************************************************************************************
+
+Copying Lists
+
+There are ways to make a copy, one way is to use the built-in List method copy().
+Example : thislist = ["apple", "banana", "cherry"]
+          mylist = thislist.copy()
+
+
+Make a copy of a list with the list() method:
+
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+
+************************************************************************************************************************************************
+
+Joining Lists
+
+There are several ways to join, or concatenate, two or more lists in Python.
+One of the easiest ways are by using the + operator.
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+
+Another way to join two lists is by appending all the items from list2 into list1, one by one:
+
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+for x in list2:
+  list1.append(x)
+
+Or you can use the extend() method, which purpose is to add elements from one list to another list:
+
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+list1.extend(list2)
+
+List Methods
+
+Method	    Description
+append()	  Adds an element at the end of the list
+clear()	    Removes all the elements from the list
+copy()	    Returns a copy of the list
+count()	    Returns the number of elements with the specified value
+extend()	  Add the elements of a list (or any iterable), to the end of the current list
+index()	    Returns the index of the first element with the specified value
+insert()	  Adds an element at the specified position
+pop()	      Removes the element at the specified position
+remove()	  Removes the item with the specified value
+reverse()	  Reverses the order of the list
+sort()	    Sorts the list
+
+
+List Operations Time Complexity
+
+Operation	        Examples	                        Complexity class
+ 	                                          Average case	  Amortised Worst case
+Append	          l.append(item)	              O(1)	            O(1)
+Clear	            l.clear()	                    O(1)	            O(1)
+Containment	      item in/not in l	            O(N)	            O(N)
+Copy	            l.copy()	                    O(N)	            O(N)
+Delete	          del l[i]	                    O(N)	            O(N)
+Extend	          l.extend(…)	                  O(N)	            O(N)
+Equality	        l1==l2, l1!=l2	              O(N)	            O(N)
+Index	            l[i]	                        O(1)	            O(1)
+Iteration	        for item in l:	              O(N)	            O(N)
+Length	          len(l)                      	O(1)	            O(1)
+Multiply	        k*l	                          O(k*N)	          O(k*N)
+Min, Max	        min(l), max(l)	              O(N)	            O(N)
+Pop from end	    l.pop(-1)	                    O(1)	            O(1)
+Pop intermediate	l.pop(item)	                  O(N)	            O(N)
+Remove	          l.remove(…)                 	O(N)	            O(N)
+Reverse	          l.reverse()	                  O(N)	            O(N)
+Slice	            l[x:y]	                      O(y-x)	          O(y-x)
+Sort	            l.sort()	                    O(N*log(N))	      O(N*log(N))
+Store	            l[i]=item	                    O(1)	            O(1)
+
