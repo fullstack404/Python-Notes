@@ -541,6 +541,8 @@ thislist = [100, 50, 65, 82, 23]
 thislist.sort(key = myfunc)
 print(thislist)
 
+Based on the return value, the numbers will be placed in ascending order rather than the actual values on the list.
+
 By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters.
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
 thislist.sort()
@@ -635,4 +637,62 @@ Reverse	          l.reverse()	                  O(N)	            O(N)
 Slice	            l[x:y]	                      O(y-x)	          O(y-x)
 Sort	            l.sort()	                    O(N*log(N))	      O(N*log(N))
 Store	            l[i]=item	                    O(1)	            O(1)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Python Tuples
+
+> A tuple is a collection which is ordered and unchangeable. Tuples are written with round brackets.
+Example: thistuple = ("apple", "banana", "cherry")
+
+> Tuple items are ordered, unchangeable, and allow duplicate values.
+
+> Tuple items are indexed, the first item has index [0], the second item has index [1] etc.
+ 
+> To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
+Example: thistuple = ("apple",)
+
+Ways to change elements in tuple
+> You can convert the tuple into a list, change the list, and convert the list back into a tuple.
+
+> Add tuple to a tuple. You are allowed to add tuples to tuples, so if you want to add one item, (or many), create a new tuple with
+  the item(s), and add it to the existing tuple.
+
+**********************************************************************************************************************************************
+
+Unpacking a tuple
+
+When we create a tuple, we normally assign values to it. This is called "packing" a tuple. But, in Python, we are also allowed to extract 
+the values back into variables. This is called "unpacking"
+
+Example: fruits = ("apple", "banana", "cherry")
+                  (green, yellow, red) = fruits
+
+Using Asterisk*
+If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the
+variable as a list.
+
+Example: fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+         (green, yellow, *red) = fruits >> red is list type.
+
+If the asterisk is added to another variable name than the last, Python will assign values to the variable until the number of values left 
+matches the number of variables left.
+
+Example: fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+         (green, *tropic, red) = fruits >> tropic will contain mango, papaya and pineapple.
+
+Tuple Methods
+
+Method	Description
+count()	Returns the number of times a specified value occurs in a tuple
+index()	Searches the tuple for a specified value and returns the position of where it was found
+
+Tuple Operation Time Complexity
+
+Operation       Example      Time Complexity
+count()      t.count(item)          O(N)
+index()      t,index(item)          O(N)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
 
