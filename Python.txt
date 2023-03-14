@@ -709,13 +709,12 @@ Method	                              Description
 add()	                                Adds an element to the set
 clear()	                              Removes all the elements from the set
 copy()	                              Returns a copy of the set
-difference()	                        Returns a set containing the difference between two or more sets
-
+difference()	                        Return a set that contains the items that only exist in set x, and not in set y
                                       Example : x = {"apple", "banana", "cherry"}
                                                 y = {"google", "microsoft", "apple"}
-                                                z = x.difference(y) - returns new set with y elements only.
+                                                z = x.difference(y) - returns new set with x elements only.
 
-difference_update()	                  Removes the items in this set that are also included in another, specified set
+difference_update()	                  Remove the items that exist in both sets.
                                       Example : x = {"apple", "banana", "cherry"}
                                                 y = {"google", "microsoft", "apple"}
                                                 x.difference_update(y) - returns x after removing the common elements of y.
@@ -744,11 +743,15 @@ issubset()	                          The issubset() method returns True if all i
 
 issuperset()	                        The issuperset() method returns True if all items in the specified set exists in the original set, 
                                       otherwise it returns False.
+                                      Example: x = {"f", "e", "d", "c", "b", "a"}
+                                               y = {"a", "b", "c"}
+                                               z = x.issuperset(y)
+
 pop()	                                Removes an element from the set.
 remove()	                            Removes the specified element.
 
 symmetric_difference()	              The symmetric_difference() method returns a set that contains all items from both set, but not the 
-                                      tems that are present in both sets.
+                                      items that are present in both sets.
                                       Example: x = {"apple", "banana", "cherry"}
                                                y = {"google", "microsoft", "apple"}
                                                z = x.symmetric_difference(y)
@@ -794,4 +797,38 @@ worst-case time complexity.
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 Python Dictionary
+
+Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered*, changeable and do not 
+allow duplicates.
+
+Dictionary Methods
+
+Method	                Description
+clear()	                Removes all the elements from the dictionary
+copy()	                Returns a copy of the dictionary
+fromkeys()	            The fromkeys() method returns a dictionary with the specified keys and the specified value.
+get()	                  Returns the value of the specified key
+items()	                Returns a list containing a tuple for each key value pair
+keys()	                Returns a list containing the dictionary's keys
+pop()	                  Removes the element with the specified key
+popitem()	              Removes the last inserted key-value pair
+setdefault()	          Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	              Updates the dictionary with the specified key-value pairs
+values()	              Returns a list of all the values in the dictionary
+
+Dictionary Operations Time Complexity
+
+Operation	        Examples	                        Complexity class
+ 	                                           Average case	  Amortised Worst case
+Clear	            d.clear()	                    O(1)	            O(1)                                              
+Construction      dict(..)                      O(len(d))         O(len(d))                                               
+Delete	          del d[key]	                  O(1)	            O(N)
+Iteration	        for item in d:	              O(N)	            O(N)
+Length	          len(d)                      	O(1)	            O(1)
+Get	              d.get()	                      O(1)	            O(N)
+Pop	              d.pop(item)	                  O(1)	            O(N)
+Pop Item	        d.popitem()	                  O(1)	            O(1)
+Returning Values	d.values()  	                O(1)	            O(1)
+Returning keys	  d.keys()	                    O(1)	            O(1)
+Fromkeys	        d.fromkeys(seq)	              O(len(seq))	      O(len(seq))
 
